@@ -1,4 +1,4 @@
-package com.mvvmredux
+package com.mvvmredux.sample
 
 import org.junit.Test
 
