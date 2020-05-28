@@ -1,2 +1,3 @@
 rootProject.name='Sample'
-include ':sample', ':mvvmredux'
+include ':sample', ':mvvmredux:core'
+include ':mvvmredux:ext'

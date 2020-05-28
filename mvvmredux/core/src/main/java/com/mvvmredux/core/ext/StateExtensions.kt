@@ -1,4 +1,4 @@
-package com.mvvmredux.extensions
+package com.mvvmredux.core.ext
 
 import com.mvvmredux.core.state.State
 import com.mvvmredux.core.state.StateView

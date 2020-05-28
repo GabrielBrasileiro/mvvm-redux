@@ -13,10 +13,16 @@ abstract class ReducerScope<S : State, SE : StateEvent>(initialState: S) : Reduc
         state.value = initialState
     }
 
+    /**
+     * Call this method to update current state in your reducer
+     */
     protected fun updateState(update: S.() -> S) {
         val currentState = requireNotNull(state.value)
         state.value = update(currentState)
     }
 
+    /**
+     * State scope listener.
+     */
     override fun getState(): LiveData<S> = state
 }

@@ -6,9 +6,9 @@ import com.mvvmredux.core.event.Event
 import com.mvvmredux.core.event.EventView
 import com.mvvmredux.core.livedata.SingleLiveEvent
 import com.mvvmredux.core.reducer.Reducer
-import com.mvvmredux.core.stateevent.StateEvent
 import com.mvvmredux.core.state.State
 import com.mvvmredux.core.state.StateView
+import com.mvvmredux.core.stateevent.StateEvent
 
 abstract class BaseViewModel<S : State, E : Event, SE : StateEvent>(
     private val event: SingleLiveEvent<E>,
