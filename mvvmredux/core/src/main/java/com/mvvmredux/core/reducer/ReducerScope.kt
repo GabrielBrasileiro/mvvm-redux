@@ -5,6 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import com.mvvmredux.core.state.State
 import com.mvvmredux.core.stateevent.StateEvent
 
+/**
+ *
+ *
+ * @author Gabriel Brasileiro
+ */
 abstract class ReducerScope<S : State, SE : StateEvent>(initialState: S) : Reducer<S, SE> {
 
     private val state = MutableLiveData<S>()
@@ -14,15 +19,14 @@ abstract class ReducerScope<S : State, SE : StateEvent>(initialState: S) : Reduc
     }
 
     /**
-     * Call this method to update current state in your reducer
+     * Call this method to update and notify current state in your reducer
+     *
+     * @param update
      */
     protected fun updateState(update: S.() -> S) {
         val currentState = requireNotNull(state.value)
         state.value = update(currentState)
     }
 
-    /**
-     * State scope listener.
-     */
     override fun getState(): LiveData<S> = state
 }

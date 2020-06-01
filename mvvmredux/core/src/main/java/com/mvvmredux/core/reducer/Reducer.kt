@@ -8,6 +8,14 @@ import com.mvvmredux.core.stateevent.StateEvent
  * Reducer control methods
  */
 interface Reducer<S : State, SE : StateEvent> {
+
+    /**
+     * Send state event
+     */
     fun updateTo(stateEvent: SE)
+
+    /**
+     * Get reducer state listener
+     */
     fun getState(): LiveData<S>
 }
