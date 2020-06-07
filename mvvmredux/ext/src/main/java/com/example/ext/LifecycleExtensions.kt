@@ -12,7 +12,7 @@ import com.mvvmredux.core.state.StateView
  * Listen view models with [EventView] implementation
  *
  * @param viewModel
- * @param onEvent
+ * @param onEvent notify [Event] changes
  */
 inline fun <E : Event> LifecycleOwner.onEvent(
     viewModel: EventView<E>,
@@ -25,7 +25,7 @@ inline fun <E : Event> LifecycleOwner.onEvent(
  * Listen view models with [StateView] implementation
  *
  * @param viewModel
- * @param onChange
+ * @param onChange notify [State] changes
  */
 inline fun <S : State> LifecycleOwner.onStateChanged(
     viewModel: StateView<S>,
@@ -35,10 +35,10 @@ inline fun <S : State> LifecycleOwner.onStateChanged(
 }
 
 /**
- * Observe current live data
+ * Observe current owner
  *
  * @param owner
- * @param data
+ * @param data notify generic data changes
  */
 inline fun <O> LiveData<O>.observe(owner: LifecycleOwner, crossinline data: (O) -> Unit) {
     observe(owner, Observer { data(it) })
