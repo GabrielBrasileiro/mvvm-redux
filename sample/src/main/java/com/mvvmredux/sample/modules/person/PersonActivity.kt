@@ -1,4 +1,4 @@
-package com.mvvmredux.sample.modules.state
+package com.mvvmredux.sample.modules.person
 
 import android.os.Bundle
 import android.widget.EditText
@@ -7,11 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.example.ext.onStateChanged
 import com.mvvmredux.sample.R
-import com.mvvmredux.sample.ext.getViewModel
+import com.example.viewmodel.getViewModel
 
-class StateActivity : AppCompatActivity(R.layout.activity_state) {
-
-    private val stateViewModel by getViewModel { StateSampleViewModel(StateSampleReducer()) }
+class PersonActivity : AppCompatActivity(R.layout.activity_person) {
+    
+    private val stateViewModel by getViewModel { PersonViewModel(PersonReducer()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

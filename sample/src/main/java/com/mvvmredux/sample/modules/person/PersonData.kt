@@ -1,8 +1,8 @@
-package com.mvvmredux.sample.modules.state
+package com.mvvmredux.sample.modules.person
 
 import com.mvvmredux.core.state.State
 
-data class StateSampleData(
+data class PersonData(
     val name: String = "",
     val age: String = "",
     val isEnabled: Boolean = false
