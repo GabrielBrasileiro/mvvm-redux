@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Redux</string>
+
+    <!-- Base Activity -->
+    <string name="base_activity_default_screen_name">Nothing Activity Selected</string>
+    <string name="base_activity_state_button_title">State Example</string>
+    <string name="base_activity_event_button_title">Event Example</string>
+    <string name="base_activity_event_screen_message">Event screen selected last time</string>
+    <string name="base_activity_state_screen_message">State screen selected last time</string>
+
 </resources>
