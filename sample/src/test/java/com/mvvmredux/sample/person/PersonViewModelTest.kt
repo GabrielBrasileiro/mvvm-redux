@@ -8,6 +8,7 @@ import com.mvvmredux.sample.modules.person.PersonViewModel
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.reset
 import com.nhaarman.mockitokotlin2.verify
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -26,7 +27,7 @@ class PersonViewModelTest {
         personViewModel = PersonViewModel(reducer)
     }
 
-    @Before
+    @After
     fun tearDown() {
         reset(reducer)
     }

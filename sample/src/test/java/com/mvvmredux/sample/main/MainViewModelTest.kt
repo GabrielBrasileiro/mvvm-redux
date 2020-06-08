@@ -57,14 +57,14 @@ class MainViewModelTest {
 
 
     @Test
-    fun `showPersonScreen Should call person screen`() {
+    fun `showPersonScreen Should notify person screen`() {
         mainViewModel.showPersonScreen()
 
         verify(mainEvent).onChanged(MainEvent.ShowPersonScreen)
     }
 
     @Test
-    fun `showLoadScreen Should call load screen`() {
+    fun `showLoadScreen Should notify load screen`() {
         mainViewModel.showLoadScreen()
 
         verify(mainEvent).onChanged(MainEvent.ShowLoadScreen)
