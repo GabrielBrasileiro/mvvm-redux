@@ -19,11 +19,8 @@ jobs:
     - name: Run Unit Test
       run: ./gradlew :sample:test
     - name: Run Jacoco Report
-      run: ./gradlew :sample:jacocoTestReport
+      run: ./gradlew jacocoReport
     - name: Run Jacoco Full Report
-      run: ./gradlew :sample:jacocoFullReport
-    - uses: codecov/codecov-action@v1
-      with:
-        file: ./sample/reports/jacoco/coverage.xml
+      run: ./gradlew jacocoFullReport
     - name: Run Build
       run: ./gradlew build

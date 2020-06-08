@@ -1,19 +1,18 @@
 apply plugin: 'jacoco'
 
 task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
-
-    // Define what type of report we should generate
-    // If we don't want to process the data further, html should be enough
     reports {
         csv.enabled = false
         xml.enabled = false
         html.enabled = true
     }
 
-    // Setup the .class, source, and execution directories
-    final fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', 'android/**/*.*']
+    final fileFilter = ['**/R.class',
+                        '**/R$*.class',
+                        '**/BuildConfig.*',
+                        '**/Manifest*.*',
+                        'android/**/*.*']
 
-    // Include this if you use Kotlin
     final kotlinTree = fileTree(dir: "${project.buildDir}/tmp/kotlin-classes/debug", excludes: fileFilter)
     final javacTree = fileTree(dir: "${project.buildDir}/intermediates/javac/debug", excludes: fileFilter)
     final mainSrc = "${project.buildDir}/src/main/java"
@@ -45,7 +44,7 @@ task jacocoFullReport(type: JacocoReport, group: 'Coverage reports') {
         }
         xml {
             enabled true
-            destination file('build/reports/jacoco/jacocoFullReport.csv')
+            destination file('build/reports/jacoco/coverage.xml')
         }
     }
 
