@@ -1,4 +1,4 @@
-package com.mvvmredux.sample.modules.event
+package com.mvvmredux.sample.modules.load
 
 import android.os.Bundle
 import android.view.View
@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.ext.onEvent
 import com.mvvmredux.core.livedata.SingleLiveEvent
 import com.mvvmredux.sample.R
-import com.mvvmredux.sample.ext.getViewModel
+import com.example.viewmodel.getViewModel
 
-class EventActivity : AppCompatActivity(R.layout.activity_event) {
+class LoadActivity : AppCompatActivity(R.layout.activity_load) {
 
-    private val eventViewModel by getViewModel { EventSampleViewModel(SingleLiveEvent()) }
+    private val eventViewModel by getViewModel { LoadViewModel(SingleLiveEvent()) }
     private val progressBar by lazy { findViewById<ProgressBar>(R.id.progress_bar) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +25,8 @@ class EventActivity : AppCompatActivity(R.layout.activity_event) {
     private fun setupEventListener() {
         onEvent(eventViewModel) { event ->
             when (event) {
-                is EventSample.ShowLoader -> showLoader(true)
-                is EventSample.HideLoader -> showLoader(false)
+                is LoadEvent.ShowLoader -> showLoader(true)
+                is LoadEvent.HideLoader -> showLoader(false)
             }
         }
     }
