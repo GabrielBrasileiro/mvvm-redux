@@ -21,7 +21,7 @@ jobs:
     - name: Run Jacoco Report
       run: ./gradlew :sample:jacocoTestReport
       name: Run Jacoco Full Report
-      run: ./gradlew :sample:jacocoTestReport
+      run: ./gradlew :sample:jacocoFullReport
     - uses: codecov/codecov-action@v1
       with:
         file: ./sample/reports/jacoco/coverage.xml
