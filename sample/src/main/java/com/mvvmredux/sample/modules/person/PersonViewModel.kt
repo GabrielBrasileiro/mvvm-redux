@@ -14,8 +14,4 @@ class PersonViewModel(
     fun saveAge(age: String) {
         updateTo(PersonStateEvent.UpdateAge(age))
     }
-
-    fun setEnabled(enabled: Boolean) {
-        updateTo(PersonStateEvent.IsEnabled(enabled))
-    }
 }

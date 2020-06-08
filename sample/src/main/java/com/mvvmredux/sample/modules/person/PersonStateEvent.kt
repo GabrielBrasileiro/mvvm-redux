@@ -11,8 +11,4 @@ sealed class PersonStateEvent : StateEvent {
     data class UpdateAge(
         val age: String
     ) : PersonStateEvent()
-
-    data class IsEnabled(
-        val isEnabled: Boolean
-    ) : PersonStateEvent()
 }
