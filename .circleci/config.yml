@@ -20,7 +20,7 @@ jobs:
       run: ./gradlew :sample:test
     - name: Run Jacoco Report
       run: ./gradlew :sample:jacocoTestReport
-      name: Run Jacoco Full Report
+      - name: Run Jacoco Full Report
       run: ./gradlew :sample:jacocoFullReport
     - uses: codecov/codecov-action@v1
       with:
