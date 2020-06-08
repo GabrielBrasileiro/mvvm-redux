@@ -41,6 +41,7 @@ dependencies {
 
     implementation project(":mvvmredux:core")
     implementation project(":mvvmredux:ext")
+    implementation project(":mvvmredux:viewmodel")
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
