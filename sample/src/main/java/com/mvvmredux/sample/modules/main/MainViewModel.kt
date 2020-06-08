@@ -2,26 +2,27 @@ package com.mvvmredux.sample.modules.main
 
 import com.mvvmredux.core.BaseViewModel
 import com.mvvmredux.core.livedata.SingleLiveEvent
+import com.mvvmredux.core.reducer.Reducer
 
 class MainViewModel(
-    defaultScreenName: String,
+    defaultScreenMessage: String,
     event: SingleLiveEvent<MainEvent>,
-    reducer: MainReducer
+    reducer: Reducer<MainData, MainStateEvent>
 ) : BaseViewModel<MainData, MainEvent, MainStateEvent>(event, reducer) {
 
     init {
-        updateTo(MainStateEvent.SelectScreenName(defaultScreenName))
+        updateTo(MainStateEvent.SelectScreenName(defaultScreenMessage))
     }
 
     fun setScreenMessage(message: String) {
         updateTo(MainStateEvent.SelectScreenName(message))
     }
 
-    fun showEventScreen() {
-        sendEvent(MainEvent.ShowEventScreen)
+    fun showPersonScreen() {
+        sendEvent(MainEvent.ShowPersonScreen)
     }
 
-    fun showStateScreen() {
-        sendEvent(MainEvent.ShowStateScreen)
+    fun showLoadScreen() {
+        sendEvent(MainEvent.ShowLoadScreen)
     }
 }

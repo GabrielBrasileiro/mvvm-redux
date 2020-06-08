@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private fun setupEventListener() {
         onEvent(viewModel) { event ->
             when (event) {
-                is MainEvent.ShowStateScreen -> startActivity<PersonActivity>()
-                is MainEvent.ShowEventScreen -> startActivity<LoadActivity>()
+                is MainEvent.ShowLoadScreen -> startActivity<PersonActivity>()
+                is MainEvent.ShowPersonScreen -> startActivity<LoadActivity>()
             }
         }
     }
@@ -50,11 +50,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         eventButton.setOnClickListener {
             viewModel.setScreenMessage(getString(R.string.base_activity_event_screen_message))
-            viewModel.showEventScreen()
+            viewModel.showPersonScreen()
         }
         stateButton.setOnClickListener {
             viewModel.setScreenMessage(getString(R.string.base_activity_state_screen_message))
-            viewModel.showStateScreen()
+            viewModel.showLoadScreen()
         }
     }
 

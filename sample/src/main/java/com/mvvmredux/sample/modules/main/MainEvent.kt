@@ -4,6 +4,6 @@ import com.mvvmredux.core.event.Event
 
 sealed class MainEvent : Event {
 
-    object ShowEventScreen : MainEvent()
-    object ShowStateScreen : MainEvent()
+    object ShowPersonScreen : MainEvent()
+    object ShowLoadScreen : MainEvent()
 }
