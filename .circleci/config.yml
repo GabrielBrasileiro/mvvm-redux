@@ -1,4 +1,7 @@
-name: CI
+version: 2
+
+orbs:
+    android: circleci/android@0.2.1
 
 on: 
   push:
@@ -15,12 +18,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run Unit Test
-      run: ./gradlew test
-    - name: Run Jacoco Report
-      run: ./gradlew jacocoReport
-    - name: Run Jacoco Full Report
-      run: ./gradlew jacocoFullReport
-    - name: Run Build
-      run: ./gradlew build
+        - checkout
+        - run:
+            name: Run Unit Test
+            command: ./gradlew test
+        - run:
+            name: Run Jacoco Report
+            command: ./gradlew jacocoReport
+        - run:
+            name: Run Jacoco Full Report
+            command: ./gradlew jacocoFullReport
+        - run:
+            name: Run Build
+            run: ./gradlew build
