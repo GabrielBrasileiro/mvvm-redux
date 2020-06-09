@@ -2,9 +2,10 @@ apply plugin: 'jacoco'
 
 task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
     reports {
-        csv.enabled = false
-        xml.enabled = true
-        html.enabled = true
+        xml {
+            enabled = true
+            destination file("${buildDir}/jacoco/coverage.xml")
+        }
     }
 
     final fileFilter = ['**/R.class',
@@ -24,33 +25,4 @@ task jacocoReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
     ])
 }
 
-task jacocoFullReport(type: JacocoReport, group: 'Coverage reports') {
-    def projects = subprojects
-
-    dependsOn(projects.jacocoReport)
-
-    final source = files(projects.jacocoReport.sourceDirectories)
-
-    additionalSourceDirs.setFrom source
-    sourceDirectories.setFrom source
-
-    classDirectories.setFrom files(projects.jacocoReport.classDirectories)
-    executionData.setFrom files(projects.jacocoReport.executionData)
-
-    reports {
-        html {
-            enabled true
-            destination file("${buildDir}/reports/jacoco/html")
-        }
-        xml {
-            enabled true
-            destination file("${buildDir}/reports/jacoco/coverage.xml")
-            println("Generated...")
-        }
-    }
-
-    doFirst {
-        executionData.setFrom files(executionData.findAll { it.exists() })
-    }
-}
 

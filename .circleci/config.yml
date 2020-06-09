@@ -28,10 +28,7 @@ jobs:
             name: Run Jacoco Report
             command: ./gradlew jacocoReport
         - run:
-            name: Run Jacoco Full Report
-            command: ./gradlew jacocoFullReport
-        - run:
             name: Run Build
             command: ./gradlew build
         - codecov/upload:
-            file: ./sample/build/reports/jacoco/coverage.xml
+            file: ./sample/build/jacoco/coverage.xml
