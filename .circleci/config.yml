@@ -32,5 +32,5 @@ jobs:
         - run:
             name: Run Build
             command: ./gradlew build
-        - codecov/upload
+        - codecov/upload:
             file: ./sample/build/reports/jacoco/coverage.xml
