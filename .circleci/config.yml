@@ -14,9 +14,6 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
     steps:
         - checkout
         - run:
@@ -30,4 +27,4 @@ jobs:
             command: ./gradlew jacocoFullReport
         - run:
             name: Run Build
-            run: ./gradlew build
+            command: ./gradlew build
