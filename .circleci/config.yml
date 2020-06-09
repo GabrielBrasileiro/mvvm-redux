@@ -2,6 +2,7 @@ version: 2
 
 orbs:
     android: circleci/android@0.2.1
+    codecov: codecov/codecov@1.0.2
 
 on: 
   push:
@@ -31,3 +32,5 @@ jobs:
         - run:
             name: Run Build
             command: ./gradlew build
+        - codecov/upload
+            file: {{ ./sample/build/reports/jacoco/coverage.xml }}
