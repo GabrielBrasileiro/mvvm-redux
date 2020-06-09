@@ -33,4 +33,4 @@ jobs:
             name: Run Build
             command: ./gradlew build
         - codecov/upload
-            file: {{ ./sample/build/reports/jacoco/coverage.xml }}
+            file: ./sample/build/reports/jacoco/coverage.xml
