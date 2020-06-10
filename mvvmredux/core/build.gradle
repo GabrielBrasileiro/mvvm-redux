@@ -1,5 +1,4 @@
 apply from: "$rootProject.projectDir/android-setup.gradle"
-apply from: 'publish.gradle'
 
 dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"

@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: "$rootProject.projectDir/jacoco-setup.gradle"
 
 android {
     compileSdkVersion 29
@@ -20,10 +19,6 @@ android {
 
     buildTypes {
         debug {
-            testCoverageEnabled = true
-        }
-        unitTest {
-            initWith(buildTypes.debug)
             testCoverageEnabled = true
         }
         release {

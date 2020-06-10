@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@0.2.1
+
+jobs:
+  build:
+
+    docker:
+      - image: circleci/android:api-25
+
+    steps:
+      - checkout
+      - run:
+          name: Run Unit Test
+          command: ./gradlew test
+      - run:
+          name: Run Build
+          command: ./gradlew build
