@@ -3,9 +3,7 @@ package com.mvvmredux.core.state
 import androidx.lifecycle.LiveData
 
 /**
- * Process interactions with SingleLiveEvent.
- *
- * @author Gabriel Brasileiro
+ * State listener controller
  */
 interface StateView<S : State> {
 
