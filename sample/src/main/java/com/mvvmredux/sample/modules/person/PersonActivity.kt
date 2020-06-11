@@ -5,9 +5,9 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import com.example.ext.onStateChanged
+import com.mvvmredux.ext.onStateChanged
 import com.mvvmredux.sample.R
-import com.example.viewmodel.getViewModel
+import com.mvvmredux.viewmodel.getViewModel
 
 class PersonActivity : AppCompatActivity(R.layout.activity_person) {
     

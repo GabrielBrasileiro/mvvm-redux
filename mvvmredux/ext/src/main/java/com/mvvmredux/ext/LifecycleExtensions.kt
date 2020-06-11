@@ -1,4 +1,4 @@
-package com.example.ext
+package com.mvvmredux.ext
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

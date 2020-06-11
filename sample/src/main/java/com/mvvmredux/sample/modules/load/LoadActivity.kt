@@ -5,10 +5,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ext.onEvent
+import com.mvvmredux.ext.onEvent
 import com.mvvmredux.core.livedata.SingleLiveEvent
 import com.mvvmredux.sample.R
-import com.example.viewmodel.getViewModel
+import com.mvvmredux.viewmodel.getViewModel
 
 class LoadActivity : AppCompatActivity(R.layout.activity_load) {
 
