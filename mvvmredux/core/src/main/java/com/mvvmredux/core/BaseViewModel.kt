@@ -10,6 +10,11 @@ import com.mvvmredux.core.state.State
 import com.mvvmredux.core.state.StateView
 import com.mvvmredux.core.stateevent.StateEvent
 
+/**
+ * Process interactions with [SingleLiveEvent] and [Reducer].
+ *
+ * @author Gabriel Brasileiro
+ */
 abstract class BaseViewModel<S : State, E : Event, SE : StateEvent>(
     private val event: SingleLiveEvent<E>,
     private val reducer: Reducer<S, SE>

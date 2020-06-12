@@ -6,7 +6,7 @@ import com.mvvmredux.core.state.State
 import com.mvvmredux.core.stateevent.StateEvent
 
 /**
- *
+ * Default reducer scope processor
  *
  * @author Gabriel Brasileiro
  */

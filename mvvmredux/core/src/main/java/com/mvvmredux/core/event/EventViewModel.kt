@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.mvvmredux.core.livedata.SingleLiveEvent
 
 /**
- * Process interactions with SingleLiveEvent.
+ * Process interactions with [SingleLiveEvent].
  *
  * @author Gabriel Brasileiro
  */
