@@ -3,7 +3,7 @@ package com.mvvmredux.core.event
 import androidx.lifecycle.LiveData
 
 /**
- * Component only for events
+ * Event listener controller
  */
 interface EventView<E : Event> {
 

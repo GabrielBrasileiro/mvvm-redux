@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ext.onEvent
-import com.example.ext.onStateChanged
+import com.mvvmredux.ext.onEvent
+import com.mvvmredux.ext.onStateChanged
 import com.mvvmredux.core.livedata.SingleLiveEvent
 import com.mvvmredux.sample.R
-import com.example.viewmodel.getViewModel
+import com.mvvmredux.viewmodel.getViewModel
 import com.mvvmredux.sample.modules.load.LoadActivity
 import com.mvvmredux.sample.modules.person.PersonActivity
 

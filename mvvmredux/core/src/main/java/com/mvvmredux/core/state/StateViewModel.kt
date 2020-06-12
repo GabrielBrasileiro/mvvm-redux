@@ -5,6 +5,11 @@ import androidx.lifecycle.ViewModel
 import com.mvvmredux.core.reducer.Reducer
 import com.mvvmredux.core.stateevent.StateEvent
 
+/**
+ * Process interactions with [Reducer].
+ *
+ * @author Gabriel Brasileiro
+ */
 abstract class StateViewModel<S : State, SE : StateEvent>(
     private val reducer: Reducer<S, SE>
 ) : StateView<S>, ViewModel() {
