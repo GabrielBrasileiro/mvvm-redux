@@ -42,6 +42,16 @@ class PersonViewModelTest {
     }
 
     @Test
+    fun `saveAge Should not update age When params equals state`() {
+        val expected = "10"
+        mockData { PersonData(age = expected) }
+
+        personViewModel.saveAge(expected)
+
+        verify(reducer, never()).updateTo(PersonStateEvent.UpdateAge(expected))
+    }
+
+    @Test
     fun `saveName Should update name`() {
         val expected = "Gabriel Brasileiro"
         mockData { PersonData() }
@@ -52,23 +62,13 @@ class PersonViewModelTest {
     }
 
     @Test
-    fun `saveAge Should not update age When params equals state`() {
-        val expected = "10"
-        mockData { PersonData(age = expected) }
-
-        personViewModel.saveAge(expected)
-
-        verify(reducer, never()).updateTo(PersonStateEvent.UpdateName(expected))
-    }
-
-    @Test
     fun `saveName Should not update name When params equals state`() {
         val expected = "Gabriel Brasileiro"
         mockData { PersonData(name = expected) }
 
         personViewModel.saveName(expected)
 
-        verify(reducer, never()).updateTo(PersonStateEvent.UpdateAge(expected))
+        verify(reducer, never()).updateTo(PersonStateEvent.UpdateName(expected))
     }
 
     private inline fun mockData(data: () -> PersonData) {
