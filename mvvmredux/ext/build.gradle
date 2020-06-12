@@ -1,7 +1,14 @@
 apply from: "$rootProject.projectDir/android-setup.gradle"
 
+ext {
+    artifactName = "ext"
+    artifactDescription = "MVVM Redux project - ext"
+}
+
 dependencies {
     implementation project(":mvvmredux:core")
 
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 }
+
+apply from: "$rootProject.projectDir/publish-android.gradle"
