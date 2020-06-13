@@ -17,7 +17,7 @@ import com.mvvmredux.sample.modules.person.PersonActivity
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private val viewModel by getViewModel {
-        val screenMessage = getString(R.string.base_activity_default_screen_name)
+        val screenMessage = getString(R.string.main_activity_default_screen_name)
         MainViewModel(screenMessage, SingleLiveEvent(), MainReducer())
     }
 
@@ -47,11 +47,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val stateButton = findViewById<Button>(R.id.state_sample_button)
 
         eventButton.setOnClickListener {
-            viewModel.setScreenMessage(getString(R.string.base_activity_event_screen_message))
+            viewModel.setScreenMessage(getString(R.string.main_activity_event_screen_message))
             viewModel.showPersonScreen()
         }
         stateButton.setOnClickListener {
-            viewModel.setScreenMessage(getString(R.string.base_activity_state_screen_message))
+            viewModel.setScreenMessage(getString(R.string.main_activity_state_screen_message))
             viewModel.showLoadScreen()
         }
     }
