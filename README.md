@@ -37,7 +37,7 @@ Insert in project gradle:
 ```groovy
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
+        jcenter()
     }
 }
 ```
