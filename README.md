@@ -14,19 +14,19 @@ The limit is your imagination. :)
 
 # Documentation
 
-* [BaseViewModel]()
-* [StateViewModel]()
-* [EventViewModel]()
-* [ReducerScope]()
-* [Reducer]()
-* [EventView]()
-* [StateView]()
-* [State]()
-* [Event]()
-* [StateEvent]()
-* [Listener Extensions]()
-* [ViewModel Extensions]()
-* [Unit Tests]
+* [BaseViewModel](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/1.-BaseViewModel)
+* [StateViewModel](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/2.-StateViewModel)
+* [EventViewModel](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/3.-EventViewModel)
+* [ReducerScope](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/4.-ReducerScope)
+* [Reducer](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/4.1.-Reducer)
+* [EventView](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/5.1.-EventView)
+* [StateView](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/6.1.-StateView)
+* [State](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/6.-State)
+* [Event](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/5.-Event)
+* [StateEvent](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/6.2.-StateEvent)
+* [Listener Extensions](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/7.-Listener-Extensions)
+* [ViewModel Extensions](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/8.-ViewModel-extensions)
+* [Unit Tests](https://github.com/GabrielBrasileiro/mvvm-redux/wiki/9.-Unit-Tests)
 
 # Installation
 
@@ -53,7 +53,7 @@ dependencies {
     // MVVM Redux extension features
     implementation "com.mvvmredux:ext:$mvvm_redux_version"
     
-    // MVVM Redux scepcific view model extensions features
+    // MVVM Redux view model extensions features
     implementation "com.mvvmredux:viewmodel:$mvvm_redux_version"
 }
 ```
