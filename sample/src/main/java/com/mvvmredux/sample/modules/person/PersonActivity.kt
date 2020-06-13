@@ -10,7 +10,7 @@ import com.mvvmredux.sample.R
 import com.mvvmredux.viewmodel.getViewModel
 
 class PersonActivity : AppCompatActivity(R.layout.activity_person) {
-    
+
     private val stateViewModel by getViewModel { PersonViewModel(PersonReducer()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

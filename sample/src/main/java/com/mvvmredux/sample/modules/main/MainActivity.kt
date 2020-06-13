@@ -39,9 +39,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private fun setupStateListener() {
-        onStateChanged(viewModel) {
-            showData(it.screenName)
-        }
+        onStateChanged(viewModel) { showData(it.screenName) }
     }
 
     private fun setupButtonListeners() {
