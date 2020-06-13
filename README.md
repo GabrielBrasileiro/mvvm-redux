@@ -8,7 +8,9 @@ Is an Android Library based in redux to help android developers apply with a sim
 
 MVVM Redux provides all you need to make your ViewModel uncoupled of view. With ViewModel extensions you can insert all you need in your constructor pragmatically. 
 
-When you need do modifications is simple understand what we are doing and modify this for your scenery. Read about our implementation in doc and you can use for your context the listener extensions.
+When you need to change your feature it will be simple. 
+
+Read about our implementation in doc and you can use for your context the listener extensions.
 
 The limit is your imagination. :)
 
@@ -43,7 +45,7 @@ allprojects {
 Insert in module gradle:
 ```groovy
 ext {
-    mvvm_redux_version = '1.0.0'
+    mvvm_redux_version = '1.0.1'
 }
 
 dependencies {

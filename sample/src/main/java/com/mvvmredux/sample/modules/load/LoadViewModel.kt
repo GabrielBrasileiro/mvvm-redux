@@ -8,10 +8,10 @@ class LoadViewModel(
 ) : EventViewModel<LoadEvent>(event) {
 
     fun showLoader() {
-        setEvent(LoadEvent.ShowLoader)
+        sendEvent(LoadEvent.ShowLoader)
     }
 
     fun hideLoader() {
-        setEvent(LoadEvent.HideLoader)
+        sendEvent(LoadEvent.HideLoader)
     }
 }

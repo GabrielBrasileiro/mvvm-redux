@@ -13,9 +13,12 @@ abstract class EventViewModel<E : Event>(
     private val event: SingleLiveEvent<E>
 ) : EventView<E>, ViewModel() {
 
-    override fun getEvent(): LiveData<E> = event
-
-    protected fun setEvent(_event: E) {
+    /**
+     * @param _event receive new event
+     */
+    protected fun sendEvent(_event: E) {
         event.value = _event
     }
+
+    override fun getEvent(): LiveData<E> = event
 }
