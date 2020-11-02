@@ -2,7 +2,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-def versionName = '1.0.1'
+def versionName = '1.0.2'
 def repoPath = 'mvvm-redux'
 
 afterEvaluate {
