@@ -45,7 +45,7 @@ allprojects {
 Insert in module gradle:
 ```groovy
 ext {
-    mvvm_redux_version = '1.0.1'
+    mvvm_redux_version = '1.0.2'
 }
 
 dependencies {
