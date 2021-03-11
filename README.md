@@ -1,3 +1,4 @@
+[![](https://androidweekly.net/issues/issue-455/badge)](https://androidweekly.net/issues/issue-455) 
 [![CircleCI](https://circleci.com/gh/GabrielBrasileiro/mvvm-redux.svg?style=svg)](https://app.circleci.com/pipelines/github/GabrielBrasileiro/mvvm-redux?branch=master)
 
 # MVVM Redux
