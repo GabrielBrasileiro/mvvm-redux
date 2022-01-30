@@ -3,19 +3,19 @@ package com.mvvmredux.sample.modules.main
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.mvvmredux.core.livedata.SingleLiveEvent
 import com.mvvmredux.ext.onEvent
 import com.mvvmredux.ext.onStateChanged
-import com.mvvmredux.core.livedata.SingleLiveEvent
 import com.mvvmredux.sample.R
-import com.mvvmredux.viewmodel.getViewModel
+import com.mvvmredux.sample.databinding.ActivityMainBinding
 import com.mvvmredux.sample.modules.load.LoadActivity
 import com.mvvmredux.sample.modules.person.PersonActivity
+import com.mvvmredux.viewmodel.getViewModel
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
 
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val viewModel by getViewModel {
         val screenMessage = getString(R.string.main_activity_default_screen_name)
         MainViewModel(screenMessage, SingleLiveEvent(), MainReducer())
@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
 
         setupEventListener()
         setupStateListener()
@@ -43,22 +44,18 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private fun setupButtonListeners() {
-        val eventButton = findViewById<Button>(R.id.event_sample_button)
-        val stateButton = findViewById<Button>(R.id.state_sample_button)
-
-        eventButton.setOnClickListener {
+        binding.eventSampleButton.setOnClickListener {
             viewModel.setScreenMessage(getString(R.string.main_activity_event_screen_message))
             viewModel.showPersonScreen()
         }
-        stateButton.setOnClickListener {
+        binding.stateSampleButton.setOnClickListener {
             viewModel.setScreenMessage(getString(R.string.main_activity_state_screen_message))
             viewModel.showLoadScreen()
         }
     }
 
     private fun showData(screenName: String) {
-        val messageTextView = findViewById<TextView>(R.id.message_text_view)
-        messageTextView.text = screenName
+        binding.messageTextView.text = screenName
     }
 
     private inline fun <reified A : Activity> startActivity() {
