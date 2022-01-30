@@ -1,9 +1,7 @@
 apply plugin: 'maven-publish'
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-def versionName = '1.0.2'
-def repoPath = 'mvvm-redux'
+def versionName = '1.0.3'
 
 afterEvaluate {
     publishing {
@@ -24,32 +22,4 @@ afterEvaluate {
 task androidSourcesJar(type: Jar) {
     archiveClassifier.set('sources')
     from android.sourceSets.main.java.srcDirs
-}
-
-if (hasProperty('bintrayUser') && hasProperty('bintrayApiKey')) {
-    bintray {
-        pkg {
-            user = bintrayUser
-            key = bintrayApiKey
-
-            name = repoPath + "-" + artifactName
-            repo = repoPath
-
-            version.name = versionName
-            version.vcsTag = versionName
-
-            description = artifactDescription
-            publish = true
-            override = true
-
-            publicDownloadNumbers = true
-            licenses = ['Apache-2.0']
-
-            issueTrackerUrl = 'https://github.com/GabrielBrasileiro/mvvm-redux/issues'
-            vcsUrl = 'https://github.com/GabrielBrasileiro/mvvm-redux.git'
-            websiteUrl = 'https://github.com/GabrielBrasileiro/mvvm-redux'
-
-            publications = ['release']
-        }
-    }
 }
