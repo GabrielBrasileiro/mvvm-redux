@@ -1,5 +1,6 @@
 [![](https://androidweekly.net/issues/issue-455/badge)](https://androidweekly.net/issues/issue-455) 
 [![CircleCI](https://circleci.com/gh/GabrielBrasileiro/mvvm-redux.svg?style=svg)](https://app.circleci.com/pipelines/github/GabrielBrasileiro/mvvm-redux?branch=master)
+[![](https://jitpack.io/v/GabrielBrasileiro/mvvm-redux.svg)](https://jitpack.io/#GabrielBrasileiro/mvvm-redux)
 
 # MVVM Redux
 
@@ -38,7 +39,10 @@ Insert in project gradle:
 ```groovy
 allprojects {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
+        // Insert repository reference here
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
@@ -46,18 +50,18 @@ allprojects {
 Insert in module gradle:
 ```groovy
 ext {
-    mvvm_redux_version = '1.0.2'
+    mvvm_redux_version = '1.0.3'
 }
 
 dependencies {
     // MVVM Redux core features
-    implementation "com.mvvmredux:core:$mvvm_redux_version"
+    implementation "com.github.gabrielbrasileiro.mvvm-redux:core:$mvvm_redux_version"
     
     // MVVM Redux extension features
-    implementation "com.mvvmredux:ext:$mvvm_redux_version"
+    implementation "com.github.gabrielbrasileiro.mvvm-redux:ext:$mvvm_redux_version"
     
     // MVVM Redux view model extensions features
-    implementation "com.mvvmredux:viewmodel:$mvvm_redux_version"
+    implementation "com.github.gabrielbrasileiro.mvvm-redux:viewmodel:$mvvm_redux_version"
 }
 ```
 
