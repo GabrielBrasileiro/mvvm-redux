@@ -38,7 +38,10 @@ Insert in project gradle:
 ```groovy
 allprojects {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
+        // Insert repository reference here
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
@@ -46,18 +49,18 @@ allprojects {
 Insert in module gradle:
 ```groovy
 ext {
-    mvvm_redux_version = '1.0.2'
+    mvvm_redux_version = '1.0.3'
 }
 
 dependencies {
     // MVVM Redux core features
-    implementation "com.mvvmredux:core:$mvvm_redux_version"
+    implementation "com.github.gabrielbrasileiro.mvvm-redux:core:$mvvm_redux_version"
     
     // MVVM Redux extension features
-    implementation "com.mvvmredux:ext:$mvvm_redux_version"
+    implementation "com.github.gabrielbrasileiro.mvvm-redux:ext:$mvvm_redux_version"
     
     // MVVM Redux view model extensions features
-    implementation "com.mvvmredux:viewmodel:$mvvm_redux_version"
+    implementation "com.github.gabrielbrasileiro.mvvm-redux:viewmodel:$mvvm_redux_version"
 }
 ```
 
